@@ -1,11 +1,11 @@
 # Abstract-Factory
 
-## Que es Abstract Factory? 
+## ¿Que es Abstract Factory? 
 
 Abstract Factory es un patron de diseño creacional que permite crear familias de objetos relacionados sin especificar sus clases concretas. 
 En lugar de instanciar objetos directamente con "new", el cliente trabaja con interfaces de fabricas que producen objetos compatibles entre si.
 
-## Para que sirve? 
+## ¿Para que sirve? 
 Sirve cuando: 
 - Tenes familias de objetos relacionadas(Ej: Muebles modernos y victorianos)
 - Queres garantizar compatibilidad entre los objetos creados
@@ -34,7 +34,7 @@ Cada estilo tiene su propia implementacion:
 - SillaVictoriana / MesaVictoriana
 
 ## Estructura del patron en el codigo 
-
+```text
 Cliente
    ↓
 IFabricaMuebles
@@ -43,7 +43,7 @@ FabricaModerna     FabricaVictoriana
    ↓                     ↓
 SillaModerna        SillaVictoriana
 MesaModerna         MesaVictoriana
-
+```
 ## Como se usa (Paso a paso)
 1. El cliente recibe una fabrica concreta
 2. La fabrica crea el producto (Silla y mesa )
@@ -51,9 +51,11 @@ MesaModerna         MesaVictoriana
 4. Los objetos creados son compatibles entre si.
 
 Ejemplo: 
+
+```csharp 
 ProbarMuebles(new FabricaModerna());
 ProbarMuebles(new FabricaVictoriana());
-
+```
 ### Ventajas 
 - Bajo acoplamiento
 - Garantiza compatibilidad entre productos
